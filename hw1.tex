@@ -1,0 +1,279 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\lhead{MATH381.004 --- Homework 1}
+\rhead{\textbf{Jason He}}
+
+\begin{document}
+\begin{enumerate}
+    \item[{[\S 1.1]} 2.]
+    \begin{itemize}
+        \item[(a)] This is not a declarative sentence so it is \fbox{not a proposition.}
+        \item[(b)] This is not a declarative sentence either; \fbox{not a proposition.}
+        \item[(c)] Google indicates black flies do exist in Maine, so this is a \fbox{FALSE proposition.}
+        \item[(d)] No value is assigned to $x$; \fbox{not a proposition.}
+        \item[(e)] The moon is made of rock, not green cheese; \fbox{FALSE proposition.}
+    \end{itemize}
+    \item[3.]
+    \begin{itemize}
+        \item[(a)] ``Mei does not have an MP3 player.''
+        \item[(b)] ``There is pollution in New Jersey.''
+        \item[(c)] ``$2+1 \neq 3$.''
+        \item[(d)] ``The summer in Maine is not hot or not sunny.''
+    \end{itemize}
+    \item[6.] \hfill
+    \vspace{-0.2in}
+    \begin{center}
+        \begin{tabular}{c|c|c|c}
+        Smartphone & RAM \textsc{(mb)} & ROM \textsc{(gb)} & Camera \textsc{(mp)} \\\hline
+        A & 256 & 32 & 8 \\\hline
+        B & 288 & 64 & 4 \\\hline
+        C & 128 & 32 & 5 \\
+        \end{tabular}
+    \end{center}
+    \begin{itemize}
+        \item[(a)] \fbox{TRUE.} $288 > 256$ and $288 > 128$.
+        \item[(b)] \fbox{TRUE.} $32 \ngtr 64$ but $5 > 4$.
+        \item[(c)] \fbox{FALSE.} $288 > 256$ and $64 > 32$, but $4 \ngtr 8$.
+        \item[(d)] \fbox{FALSE.} ``If $p$ then $q$'' is false:
+        \begin{itemize}
+            \item[$p$:] ``B has more RAM and more ROM than C'' is true; ($288 > 128) \land (64 > 32$).
+            \item[$q$:] ``B has a higher resolution camera than C'' is false; $4 \ngtr 5$.
+        \end{itemize}
+        \item[(e)] \fbox{FALSE.} ``$p$ if and only if $q$'' is false:
+        \begin{itemize}
+            \item[$p$:] ``A has more RAM than B'' is false; $256 \ngtr 288$.
+            \item[$q$:] ``B has more RAM than A'' is true;  $288 > 256$.
+        \end{itemize}
+    \end{itemize}
+    \item[10.]
+    \begin{itemize}
+        \item[(b)] ``The election is decided or the votes have been counted.''
+        \item[(d)] ``If the votes have been counted, then the election is decided.''
+        \item[(f)] ``If the election is not decided, then the votes have not been counted.''
+    \end{itemize}
+    \item[12.]
+    \begin{itemize}
+        \item[(a)] ``If you have the flu, then you miss the final examination.''
+        \item[(c)] ``If you miss the final examination, then you do not pass the course.''
+        \item[(e)] ``If you have the flu, then you do not pass the course, or if you miss the final examination, then you do not pass the course.''
+    \end{itemize}
+    \item[17.] These are all of the form ``if $p$ then $q$,'' which is true when $q$ is true or $p$ is false.
+    \begin{itemize}
+        \item[(a)] $p$ is true and $q$ is false, so the statement is \fbox{FALSE.}
+        \item[(b)] $p$ is false, so the statement is \fbox{TRUE.}
+        \item[(c)] $p$ is false, so the statement is \fbox{TRUE.}
+        \item[(d)] $p$ is false (monkeys cannot fly) so the statement is \fbox{TRUE.}
+    \end{itemize}
+    \item[22.]
+    \begin{itemize}
+        \item[(a)] ``If one gets promoted, then one has washed the boss's car.''
+        \item[(d)] ``If he cheats, then Willy gets caught.''
+    \end{itemize}
+    \item[32.]
+    \begin{itemize}
+        \item[(a)]\hfill
+        \vspace{-0.1in}
+        \newline
+        \begin{tabular}{|c|c|c|}\hline
+        $p$ & $\neg p$ & $p \rightarrow \neg p$ \\\hline
+        T & F & F \\%\hline
+        F & T & T \\\hline
+        \end{tabular}
+        \item[(e)]\hfill
+        \vspace{-0.1in}
+        \newline
+        \begin{tabular}{|c|c|c|c|c|c|}\hline
+        $p$ & $q$ & $\neg p$ & $q \rightarrow \neg p$ & $p \leftrightarrow q$ & $(q \rightarrow \neg p) \leftrightarrow (p \leftrightarrow q)$\\\hline
+        T & T & F & F & T & F \\%\hline
+        T & F & F & T & F & F \\%\hline
+        F & T & T & T & F & F \\%\hline
+        F & F & T & T & T & T \\\hline
+        \end{tabular}
+    \end{itemize}
+    \item[37.]
+    \begin{itemize}
+        \item[(a)]\hfill
+        \vspace{-0.1in}
+        \newline
+        \begin{tabular}{|c|c|c|c|c|c|}\hline
+        $p$ & $q$ & $r$ & $\neg q$ & $\neg q \lor r$ & $p \rightarrow (\neg q \lor r)$\\\hline
+        T & T & T & F & T & T \\
+        T & T & F & F & F & F \\
+        T & F & T & T & T & T \\
+        T & F & F & T & T & T \\
+        F & T & T & F & T & T \\
+        F & T & F & F & F & T \\
+        F & F & T & T & T & T \\
+        F & F & F & T & T & T \\\hline
+        \end{tabular}
+        \item[(d)]\hfill
+        \vspace{-0.1in}
+        \newline
+        \begin{tabular}{|c|c|c|c|c|c|c|}\hline
+        $p$ & $q$ & $r$ & $\neg p$ & $p \rightarrow q$ & $\neg p \rightarrow r$ &$(p \rightarrow q) \land (\neg p \rightarrow r)$\\\hline
+        T & T & T & F & T & T & T \\
+        T & T & F & F & T & T & T \\
+        T & F & T & F & F & T & F \\
+        T & F & F & F & F & T & F \\
+        F & T & T & T & T & T & T \\
+        F & T & F & T & T & F & F \\
+        F & F & T & T & T & T & T \\
+        F & F & F & T & T & F & F \\\hline
+        \end{tabular}
+    \end{itemize}
+    \item[{[\S 1.3]} 1.]
+    \begin{itemize}
+        \item[(a)]\hfill
+        \vspace{-0.1in}
+        \newline
+        \begin{tabular}{|c|c|}\hline
+        $p$ & $p \land \mathbf{T}$\\\hline
+        T & T \\
+        F & F \\\hline
+        \end{tabular}
+        \item[(b)]\hfill
+        \vspace{-0.1in}
+        \newline
+        \begin{tabular}{|c|c|}\hline
+        $p$ & $p \lor \mathbf{F}$\\\hline
+        T & T \\
+        F & F \\\hline
+        \end{tabular}
+        \item[(c)]\hfill
+        \vspace{-0.1in}
+        \newline
+        \begin{tabular}{|c|c|c|}\hline
+        $p$ & $p \land \mathbf{F}$ & $\mathbf{F}$\\\hline
+        T & F & F \\
+        F & F & F \\\hline
+        \end{tabular}
+        \item[(d)]\hfill
+        \vspace{-0.1in}
+        \newline
+        \begin{tabular}{|c|c|c|}\hline
+        $p$ & $p \lor \mathbf{T}$ & $\mathbf{T}$\\\hline
+        T & T & T \\
+        F & T & T \\\hline
+        \end{tabular}
+        \item[(e)]\hfill
+        \vspace{-0.1in}
+        \newline
+        \begin{tabular}{|c|c|}\hline
+        $p$ & $p \lor p$ \\\hline
+        T & T \\
+        F & F \\\hline
+        \end{tabular}
+        \item[(f)]\hfill
+        \vspace{-0.1in}
+        \newline
+        \begin{tabular}{|c|c|}\hline
+        $p$ & $p \land p$ \\\hline
+        T & T \\
+        F & F \\\hline
+        \end{tabular}
+    \end{itemize}
+    \item[6.] $\neg (p \land q) \equiv \neg p \lor \neg q$ as shown in class on January 13:
+    \newline
+    \begin{tabular}{|c|c|c|c|c|c|c|}\hline
+    $p$ & $q$ & $p \land q$ & $\neg (p \land q)$ & $\neg p$ & $\neg q$ & $\neg p \lor \neg q$ \\\hline
+    T & T & T & F & F & F & F \\
+    T & F & F & T & F & T & T \\
+    F & T & F & T & T & F & T \\
+    F & F & F & T & T & T & T \\\hline
+    \end{tabular}
+    \item[7.]
+    \begin{itemize}
+        \item[(a)] [$\neg (p \land q) \equiv \neg p \lor \neg q$] ``Jan is not rich or not happy.''
+        \item[(b)] [$\neg (p \lor q) \equiv \neg p \land \neg q$] ``Carlos will neither bicycle nor run tomorrow.''
+        \item[(c)] [$\neg (p \lor q) \equiv \neg p \land \neg q$] ``Mei neither walks nor takes the bus to class.''
+        \item[(d)] [$\neg (p \land q) \equiv \neg p \lor \neg q$] ``Ibrahim is not smart or not hard working.''
+    \end{itemize}
+    \item[9.]
+    \begin{itemize}
+        \item[(a)]\hfill
+        \vspace{-0.1in}
+        \newline
+        \begin{tabular}{|c|c|c|c|}\hline
+        $p$ & $q$ & $(p \land q)$ & $(p \land q) \rightarrow p$ \\\hline
+        T & T & T & \multirow{4}{*}{always T} \\
+        T & F & F & \\
+        F & T & F & \\
+        F & F & F & \\\hline
+        \end{tabular}
+        \item[(c)]\hfill
+        \vspace{-0.1in}
+        \newline
+        \begin{tabular}{|c|c|c|c|c|}\hline
+        $p$ & $q$ & $\neg p$ & $p \rightarrow q$ & $\neg p \rightarrow (p \rightarrow q)$ \\\hline
+        T & T & F & T & \multirow{4}{*}{always T} \\
+        T & F & F & F & \\
+        F & T & T & T & \\
+        F & F & T & T & \\\hline
+        \end{tabular}
+        \item[(e)]\hfill
+        \vspace{-0.1in}
+        \newline
+        \begin{tabular}{|c|c|c|c|c|}\hline
+        $p$ & $q$ & $p \rightarrow q$ & $\neg(p \rightarrow q)$ & $\neg(p \rightarrow q) \rightarrow p$ \\\hline
+        T & T & T & F & \multirow{4}{*}{always T} \\
+        T & F & F & T & \\
+        F & T & T & F & \\
+        F & F & T & F & \\\hline
+        \end{tabular}
+    \end{itemize}
+    \item[11.]
+    \begin{itemize}
+        \item[(a)]
+        \begin{align*}
+        (p \land q) \rightarrow p &\equiv p \lor \neg (p \land q) \tag*{by logical equivalence involving conditionals \textsc{(leic)}}\\
+        &\equiv p \lor (\neg p \lor \neg q) \tag*{by the first De Morgan law}\\
+        &\equiv (p \lor \neg p) \lor q \tag*{by associativity}\\
+        &\equiv \mathbf{T} \lor q \tag*{by negation}\\
+        &\equiv \mathbf{T} \tag*{by the identity laws}
+        \end{align*}
+        \item[(c)]
+        \begin{align*}
+        \neg p \rightarrow (p \rightarrow q) &\equiv (p \rightarrow q) \lor p \tag*{by \textsc{leic} and by double negation}\\
+        &\equiv (q \lor \neg p) \lor p \tag*{by \textsc{leic}}\\
+        &\equiv q \lor (\neg p \lor p) \tag*{by associativity}\\
+        &\equiv q \lor \mathbf{T} \tag*{by negation}\\
+        &\equiv \mathbf{T} \tag*{by the identity laws}
+        \end{align*}
+        \item[(e)]
+        \begin{align*}
+        \neg(p \rightarrow q) \rightarrow p &\equiv p \lor (p \rightarrow q) \tag*{by \textsc{leic}}\\
+        &\equiv p \lor (q \lor \neg p) \tag*{by \textsc{leic}}\\
+        &\equiv q \lor (p \lor \neg p) \tag*{by commutativity and by associativity}\\
+        &\equiv q \lor \mathbf{T} \tag*{by negation}\\
+        &\equiv \mathbf{T} \tag*{by the identity laws}
+        \end{align*}
+    \end{itemize}
+    \item[17.] $\neg (p \leftrightarrow q) \equiv p \leftrightarrow \neg q$ because both sides are true (or both sides are false) for all combinations of truth values of $p$ and $q$:
+    \newline
+    \begin{tabular}{|c|c|c|c|c|c|}\hline
+    $p$ & $q$ & $\neg q$ & $p \leftrightarrow q$ & $\neg (p \leftrightarrow q)$ & $p \leftrightarrow \neg q$\\\hline
+    T & T & F & T & F & F \\
+    T & F & T & F & T & T \\
+    F & T & F & F & T & T \\
+    F & F & T & T & F & F \\\hline
+    \end{tabular}
+    \item[32.] \underline{Proof by counterexample.} Suppose
+    \begin{align*}
+    p &: \mathrm{true} \\
+    q &: \mathrm{false} \\
+    r &: \mathrm{false}
+    \end{align*}
+
+    Then $(p \land q)$ is false, so $(p \land q) \rightarrow r$ is true.
+
+    Since $(p \rightarrow r)$ is false, $(p \rightarrow r) \land (q \rightarrow r)$ is false.
+
+    Therefore $(p \land q) \rightarrow r$ is not logically equivalent to $(p \rightarrow r) \land (q \rightarrow r)$.
+\end{enumerate}
+\end{document}
