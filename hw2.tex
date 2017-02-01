@@ -1,0 +1,143 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\lhead{MATH381.004 --- Homework 2}
+\rhead{\textbf{Jason He}}
+
+\begin{document}
+\begin{enumerate}
+    \item[{[\S 1.4]} 2a.] \fbox{TRUE.} $x = \texttt{orange}$ contains the letter \texttt{a} in its third position from the left.
+    \item[3b.] \fbox{FALSE.} $x = \textrm{Detroit}$ is not the capital of $y = \textrm{Michigan}$. The capital is Lansing.
+    \item[5.]
+        \begin{itemize}
+            \item[(a)] ``There exists a student who spends more than five hours every weekday in class.''
+            \item[(b)] ``All students spend more than five hours every weekday in class.''
+        \end{itemize}
+    \item[9.]
+        \begin{itemize}
+            \item[(a)] $\exists x \, \left( P(x) \land Q(x) \right)$
+            \item[(c)] $\forall x \, \left( P(x) \lor Q(x) \right)$
+        \end{itemize}
+    \item[13.]
+        \begin{itemize}
+            \item[(a)] \fbox{TRUE.} Any integer, plus one, is strictly greater than the integer by itself.
+            \item[(c)] \fbox{TRUE.} Namely, if $n = 0$, then $-0 = 0$ is a true statement.
+        \end{itemize}
+    \item[16.]
+        \begin{itemize}
+            \item[(b)] \fbox{FALSE.} The square of any real number is nonnegative.
+            \item[(d)] \fbox{FALSE.} $x = 0$ is a counterexample; $0^2 = 0$.
+        \end{itemize}
+    \item[17d.] $\neg P(0) \land \neg P(1) \land \neg P(2) \land \neg P(3) \land \neg P(4)$
+    \item[21.]
+        \begin{itemize}
+            \item[(c)]
+                \begin{itemize}
+                    \item If the domain consists of \underline{Donald Trump Jr., Ivanka Trump, and Eric Trump}, then the statement is true, because all three have the same mother, namely Ivana Trump, and so any combination of two people in this domain will have the same mother.
+                    \item If the domain consists of \underline{Ted Cruz, Marco Rubio, and John Kasich}, then the statement is false because all have different mothers.
+                \end{itemize}
+            \item[(d)]
+                \begin{itemize}
+                    \item If the domain consists of \underline{Hillary Clinton, Bernie Sanders, and Martin O'Malley}, then the statement is true because all have different grandmothers.
+                    \item If the domain consists of \underline{Sasha Obama, Malia Obama, and Chelsea Clinton}, then the statement is false because Marian Robinson is the grandmother of both Sasha and Malia, who are two different people.
+                \end{itemize}
+        \end{itemize}
+    \item[25.] Let the domain be all people, and
+        \begin{align*}
+        P(x) &= \textrm{``$x$ is perfect''}\\
+        Q(x) &= \textrm{``$x$ is your friend''}
+        \end{align*}
+        Then
+        \begin{itemize}
+            \item[(a)] $\forall x \, \neg P(x)$
+            \item[(d)] $\exists x \, \left( Q(x) \land P(x) \right)$
+        \end{itemize}
+    \item[35b.] $x = 0$ is a counterexample. $0 \ngtr 0$ and $0 \nless 0$.
+    \item[40b.] Let
+        \begin{align*}
+        P(x) &= \textrm{``$x$ can be opened''} \tag*{\textit{domain:} directories in the file system}\\
+        Q(y) &= \textrm{``$y$ can be closed''} \tag*{\textit{domain:} files}\\
+        R &= \textrm{``System errors have been detected''}
+        \end{align*}
+    Then \fbox{$R \rightarrow \forall x \, \forall y \, \left( \neg P(x) \land \neg Q(y) \right)$}.
+
+    % If \emph{multiple} system errors are required (the question is not clear) then let
+    % \[
+    % S = \textrm{``System errors have been detected''}
+    % \]
+    % so the expression is $S \rightarrow \forall x \, \forall y \, \left( \neg P(x) \land \neg Q(y) \right)$.
+    \item[45.] As shown in the January 23 lecture, there are three cases to consider.
+        \begin{itemize}
+            \item \underline{Case 1.} There exists some $x$ for which $P(x)$ is true.
+            \begin{itemize}
+                \item[$\Rightarrow$] $\exists x \, P(x)$ is true $\Rightarrow \exists x \, P(x) \lor \exists x \, Q(x)$ is true.
+                \item[$\Rightarrow$] $P(x) \lor Q(x)$ is true $\Rightarrow \exists x \, \left( P(x) \lor Q(x) \right)$ is true.
+            \end{itemize}
+            \item \underline{Case 2.} There exists some $x$ for which $Q(x)$ is true.
+            \begin{itemize}
+                \item[$\Rightarrow$] $\exists x \, Q(x)$ is true $\Rightarrow \exists x \, P(x) \lor \exists x \, Q(x)$ is true.
+                \item[$\Rightarrow$] $P(x) \lor Q(x)$ is true $\Rightarrow \exists x \, \left( P(x) \lor Q(x) \right)$ is true.
+            \end{itemize}
+            \item \underline{Case 3.} For all $x$, $P(x)$ and $Q(x)$ are both false.
+            \begin{itemize}
+                \item[$\Rightarrow$] $\exists x \, P(x)$ is false. $\exists x \, Q(x)$ is false. By implication, $\exists x \, P(x) \lor \exists x \, Q(x)$ is false.
+                \item[$\Rightarrow$] $P(x) \lor Q(x)$ is false $\Rightarrow \exists x \, \left( P(x) \lor Q(x) \right)$ is false.
+            \end{itemize}
+        \end{itemize}
+    Therefore it is proven that
+    \[
+    \exists x \, \left( P(x) \lor Q(x) \right) \Longleftrightarrow \exists x \, P(x) \lor \exists x \, Q(x)
+    \]
+    \item[{[\S 1.5]} 2.]
+        \begin{itemize}
+            \item[(a)] ``There exists a real number $x$ such that for every real number $y$, the product of $x$ and $y$ equals $y$.''
+            \item[(c)] ``For every real number $x$ and every real number $y$, there exists a real number $z$ such that $x$ equals the sum of $y$ and $z$.''
+        \end{itemize}
+    \item[3.]
+        \begin{itemize}
+            \item[(a)] ``There exists a student $x$ and a student $y$ such that $x$ has sent an e-mail message to $y$.''
+            \item[(c)] ``For every student $x$, there exists a student $y$ such that $x$ has sent an e-mail message to $y$.''
+                % \begin{itemize}
+                %     \item More intuitively: \emph{every student has emailed at least one student.}
+                % \end{itemize}
+        \end{itemize}
+    \item[8.]
+        \begin{itemize}
+            \item[(a)] $\exists x \, \exists y \, Q(x,y)$
+            \item[(b)] $\forall x \, \forall y \, \neg Q(x,y)$
+            \item[(c)] $\exists x \, \left( Q(x, \textrm{Jeopardy}) \land Q(x, \textrm{Wheel of Fortune}) \right)$
+        \end{itemize}
+    \item[23.]
+        \begin{itemize}
+            \item[(a)] $\forall x \, \forall y \, \left( \left( x<0 \land y<0 \right) \rightarrow xy>0 \right)$
+            \item[(c)] $\forall x \, \left( x > 0 \rightarrow \exists a \, \exists b \, \left( (a \neq b) \land \forall c \, \left( c^2 = x \leftrightarrow c = a \lor c = b \right) \right) \right)$
+        \end{itemize}
+        where the domain for all variables consists of all real numbers.
+    \item[26.]
+        \begin{itemize}
+            \item[(e)] \fbox{TRUE.} Let $x = y = 0$; $0 + 0 = 0 - 0$.
+            \item[(f)] \fbox{TRUE.} Let $y = 0$; $x + 0 = x - 0$ for all $x$.
+        \end{itemize}
+    \item[31.]
+        \begin{itemize}
+            \item[(b)] By De Morgan's laws,
+                \begin{align*}
+                \neg \left( \forall x \, \exists y \, P(x,y) \lor \forall x \, \exists y \, Q(x,y) \right) &\equiv \neg \forall x \, \exists y \, P(x,y) \land \neg \forall x \, \exists y \, Q(x,y) \\%\tag*{by De Morgan's laws}\\
+                &\equiv \exists x \, \neg \exists y \, P(x,y) \land \exists x \, \neg \exists y \, Q(x,y) \\%\tag*{by De Morgan's laws for quantifiers}\\
+                &\equiv \exists x \, \forall y \, \neg P(x,y) \land \exists x \, \forall y \, \neg Q(x,y) %\tag*{by De Morgan's laws for quantifiers}
+                \end{align*}
+            \item[(c)] Again by De Morgan's laws,
+                \begin{align*}
+                \neg \forall x \, \exists y \, \left( P(x,y) \land \exists z \, R(x,y,z) \right) &\equiv \exists x \, \neg \exists y \, \left( P(x,y) \land \exists z \, R(x,y,z) \right) \\
+                &\equiv \exists x \, \forall y \, \neg \left( P(x,y) \land \exists z \, R(x,y,z) \right) \\
+                &\equiv \exists x \, \forall y \, \left( \neg P(x,y) \lor \neg \exists z \, R(x,y,z) \right) \\
+                &\equiv \exists x \, \forall y \, \left( \neg P(x,y) \lor \forall z \, \neg R(x,y,z) \right)
+                \end{align*}
+        \end{itemize}
+\end{enumerate}
+\end{document}
