@@ -1,0 +1,466 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\pagestyle{fancy}
+
+\lhead{MATH381.004 --- Homework 3}
+\rhead{\textbf{Jason He}}
+
+\begin{document}
+\begin{enumerate}
+    \item[{[\S 1.6]} 3.]
+    \begin{itemize}
+        \item[(a)] \fbox{Addition} where $p = \textrm{``Alice is a mathematics major''}$ and $q = \textrm{``Alice is a computer science major''}$
+
+                    \begin{tabular}{cl}
+                    & $p$ \\\cline{2-2}
+                    $\therefore$ & $p \lor q$
+                    \end{tabular}
+        \item[(e)] \fbox{Modus ponens} where $p = \textrm{``it is rainy''}$ and $q = \textrm{``the pool is closed''}$
+
+                    \begin{tabular}{cl}
+                    & $p$ \\
+                    & $p \rightarrow q$ \\\cline{2-2}
+                    $\therefore$ & $q$
+                    \end{tabular}
+    \end{itemize}
+    \item[6.] Let
+        \begin{align*}
+        p &= \textrm{``it rains,''}\\
+        q &= \textrm{``it is foggy,''}\\
+        r &= \textrm{``the sailing race is held,''}\\
+        s &= \textrm{``the lifesaving demonstration will go on,'' and}\\
+        t &= \textrm{``the trophy is awarded.''}
+        \end{align*}
+        Then
+        \begin{center}
+        \begin{tabular}{|>{\columncolor[gray]{0.9}}r|l|l|}\hline
+        \texttt{1} & $(\neg p \lor \neg q) \rightarrow (r \land s)$ & premise\\
+        \texttt{2} & $r \rightarrow t$ & premise\\
+        \texttt{3} & $\neg t$ & premise\\
+        \texttt{4} & $\neg r$ & modus tollens with \texttt{2} and \texttt{3}\\
+        \texttt{5} & $\neg (r \land s) \rightarrow \neg (\neg p \lor \neg q)$ & contrapositive from \texttt{1}\\
+        \texttt{6} & $\neg (r \land s) \rightarrow \neg (\neg (p \land q))$ & De Morgan's law\\
+        \texttt{7} & $\neg (r \land s) \rightarrow (p \land q)$ & double negation\\
+        \texttt{8} & $\neg r \lor \neg s$ & addition from \texttt{4}\\
+        \texttt{9} & $\neg (r \land s)$ & De Morgan's law\\
+        \texttt{10} & $p \land q$ & modus ponens with \texttt{7} and \texttt{9}\\
+        \texttt{11} & $p$ & simplification\\\hline
+        \end{tabular}
+        \end{center}
+    \item[9.]
+    \begin{itemize}
+        \item[(a)] Let
+            \begin{align*}
+            p &= \textrm{``I take Tuesday off,''}\\
+            q &= \textrm{``I take Thursday off,''}\\
+            r &= \textrm{``it rains on Tuesday,''}\\
+            s &= \textrm{``it rains on Thursday,''}\\
+            t &= \textrm{``it snows on Tuesday,'' and}\\
+            u &= \textrm{``it snows on Thursday.''}
+            \end{align*}
+            Then %(where $\bullet$ denotes a relevant conclusion)
+
+            \begin{center}
+            \begin{tabular}{|>{\columncolor[gray]{0.9}}r>{\columncolor[gray]{0.9}}r|l|l|}\hline
+            & \texttt{1} & $p \rightarrow (r \lor t)$ & premise\\
+            & \texttt{2} & $q \rightarrow (s \lor u)$ & premise\\
+            & \texttt{3} & $p \lor q$ & premise\\
+            & \texttt{4} & $\neg r \land \neg t$ & premise\\
+            & \texttt{5} & $\neg u$ & premise\\
+            & \texttt{6} & $\neg (r \lor t)$ & De Morgan's law from \texttt{4}\\
+            $\bigstar$ & \texttt{7} & $\neg p$ & modus tollens with \texttt{1} and \texttt{6}\\
+            $\bigstar$ & \texttt{8} & $q$ & disjunctive syllogism with \texttt{3} and \texttt{7}\\
+            & \texttt{9} & $s \lor u$ & modus ponens with \texttt{2} and \texttt{8}\\
+            $\bigstar$ & \texttt{10} & $s$ & disjunctive syllogism with \texttt{5} and \texttt{9}\\\hline
+            \end{tabular}
+            \end{center}
+
+            so the conclusions are %(starred above) are
+            %\begin{center}
+            \begin{itemize}[leftmargin=0.5in]
+                \item[\texttt{7.}] I did not take Tuesday off,
+                \item[\texttt{8.}] I took Thursday off, and
+                \item[\texttt{10.}] it rained Thursday.
+            \end{itemize}
+            %\end{center}
+            \vspace{0.1in}
+        \item[(d)] Let the domain consist of people, and
+            \begin{align*}
+            P(x) &= \textrm{``$x$ is a computer science major'' and}\\
+            Q(x) &= \textrm{``$x$ has a personal computer.''}
+            \end{align*}
+            Then
+
+            \begin{center}
+            \begin{tabular}{|>{\columncolor[gray]{0.9}}r>{\columncolor[gray]{0.9}}r|l|l|}\hline
+            & \texttt{1} & $\forall x \, (P(x) \rightarrow Q(x))$ & premise\\
+            & \texttt{2} & $\neg Q(\textrm{Ralph})$ & premise\\
+            & \texttt{3} & $Q(\textrm{Ann})$ & premise\\ %\emph{(unused)}\\
+            $\bigstar$ & \texttt{4} & $\neg P(\textrm{Ralph})$ & contrapositive from \texttt{1} and \texttt{2}\\\hline
+            \end{tabular}
+            \end{center}
+
+            so the conclusion is
+            \begin{itemize}[leftmargin=0.5in]
+                \item[\texttt{4.}] Ralph is not a computer science major.
+            \end{itemize}
+            \vspace{0.1in}
+    \end{itemize}
+    \item[10c.] Let the domain consist of bugs, and
+        \begin{align*}
+        P(x) &= \textrm{``$x$ are insects,''}\\
+        Q(x) &= \textrm{``$x$ have six legs,'' and}\\
+        R(x,y) &= \textrm{``$x$ eat $y$.''}
+        \end{align*}
+        Then
+
+        \begin{center}
+        \begin{tabular}{|>{\columncolor[gray]{0.9}}r>{\columncolor[gray]{0.9}}r|l|l|}\hline
+        & \texttt{1} & $\forall x \, (P(x) \rightarrow Q(x))$ & premise\\
+        & \texttt{2} & $P(\textrm{dragonflies})$ & premise\\
+        & \texttt{3} & $\neg Q(\textrm{spiders})$ & premise\\
+        & \texttt{4} & $R(\textrm{spiders}, \textrm{dragonflies})$ & premise\\
+        & \texttt{5} & $(P(a) \rightarrow Q(a))$ for any $a$ & universal instantiation from \texttt{1}\\
+        & \texttt{6} & $(\neg Q(a) \rightarrow \neg P(a))$ for any $a$ & contrapositive\\
+        $\bigstar$ & \texttt{7} & $\forall x \, (\neg Q(x) \rightarrow \neg P(x))$ & universal generalization\\        
+        & \texttt{8} & $P(\textrm{spiders}) \rightarrow Q(\textrm{spiders})$ & set $a = \textrm{spiders}$ \\
+        & \texttt{9} & $P(\textrm{dragonflies}) \rightarrow Q(\textrm{dragonflies})$ & set $a = \textrm{dragonflies}$ from \texttt{5}\\
+        $\bigstar$ & \texttt{10} & $Q(\textrm{dragonflies})$ & modus ponens with \texttt{2} and \texttt{9}\\
+        $\bigstar$ & \texttt{11} & $\neg P(\textrm{spiders})$ & modus tollens with \texttt{3} and \texttt{8}\\
+        & \texttt{12} & $P(\textrm{dragonflies}) \land (\neg Q(\textrm{spiders})) \land R(\textrm{spiders}, \textrm{dragonflies})$ & conjunction with \texttt{2}, \texttt{3}, and \texttt{4}\\
+        $\bigstar$ & \texttt{13} & $\exists x \, \exists y \, (P(x) \land (\neg Q(y)) \land R(y,x))$ & existential generalization\\\hline
+        % & \texttt{10} & $P(\textrm{dragonflies}) \land R(\textrm{spiders}, \textrm{dragonflies})$ & conjunction with \texttt{2} and \texttt{4}\\
+        % $\bullet$ & \texttt{11} & $\exists x \, (P(x) \land R(\textrm{spiders}, x))$ & existential generalization\\
+        % & \texttt{12} & $(\neg Q(\textrm{spiders})) \land R(\textrm{spiders}, \textrm{dragonflies})$ & conjunction with \texttt{3} and \texttt{4}\\
+        \end{tabular}
+        \end{center}
+
+        so the conclusions are
+        \begin{itemize}[leftmargin=0.5in]
+            \item[\texttt{7.}] Any bug that does not have six legs is not an insect;
+            \item[\texttt{10.}] dragonflies have six legs;
+            \item[\texttt{11.}] spiders are not insects;
+            \item[\texttt{13.}] there exists a non-insect that eats an insect.
+        \end{itemize}
+    \item[13.]
+        \begin{itemize}
+            \item[(a)] Let the domain consist of students, and
+                \begin{align*}
+                P(x) &= \textrm{``$x$ is in this class,''}\\
+                Q(x) &= \textrm{``$x$ knows how to write programs in JAVA,'' and}\\
+                R(x) &= \textrm{``$x$ can get a high-paying job.''}
+                \end{align*}
+                The conclusion, $\exists x \, (P(x) \land R(x))$, is arrived from
+
+                \begin{center}
+                \begin{tabular}{|>{\columncolor[gray]{0.9}}r|l|l|}\hline
+                \texttt{1} & $P(\textrm{Doug})$ & premise\\
+                \texttt{2} & $Q(\textrm{Doug})$ & premise\\
+                \texttt{3} & $\forall x \, (Q(x) \rightarrow R(x))$ & premise\\
+                \texttt{4} & $Q(\textrm{Doug}) \rightarrow R(\textrm{Doug})$ & universal instantiation\\
+                \texttt{5} & $R(\textrm{Doug})$ & modus ponens with \texttt{2} and \texttt{4}\\
+                \texttt{6} & $P(\textrm{Doug}) \land R(\textrm{Doug})$ & conjunction with \texttt{1} and \texttt{5}\\
+                \texttt{7} & $\exists x \, (P(x) \land R(x))$ & existential generalization\\\hline
+                \end{tabular}
+                \end{center}
+                \vspace{0.1in}
+            \item[(b)] Let the domain consist of people, and
+                \begin{align*}
+                P(y) &= \textrm{``$y$ is in this class,''}\\
+                S(y) &= \textrm{``$y$ enjoys whale watching,'' and}\\
+                T(y) &= \textrm{``$y$ cares about ocean pollution.''}
+                \end{align*}
+                The conclusion, $\exists y \, (P(y) \land T(y))$, is arrived from
+
+                \begin{center}
+                \begin{tabular}{|>{\columncolor[gray]{0.9}}r|l|l|}\hline
+                \texttt{1} & $\exists y \, (P(y) \land S(y))$ & premise\\
+                \texttt{2} & $\forall y \, (S(y) \rightarrow T(y))$ & premise\\
+                \texttt{3} & $P(a) \land S(a)$ for some person $a$ & existential instantiation from \texttt{1}\\
+                \texttt{4} & $P(a)$ for some person $a$ & simplification\\
+                \texttt{5} & $S(a)$ for some person $a$ & simplification from \texttt{3}\\
+                \texttt{6} & $(S(a) \rightarrow T(a))$ for some person $a$ & universal instantiation from \texttt{2}\\
+                \texttt{7} & $T(a)$ for some person $a$ & modus ponens with \texttt{5} and \texttt{6}\\
+                \texttt{8} & $(P(a) \land T(a))$ for some person $a$ & conjunction with \texttt{4} and \texttt{7}\\
+                \texttt{9} & $\exists y \, (P(y) \land T(y))$ & existential generalization\\\hline
+                \end{tabular}
+                \end{center}
+        \end{itemize}
+    \item[15.]
+        \begin{itemize}
+            \item[(a)] \fbox{Correct argument.} Let the domain consist of people, and
+                \begin{align*}
+                P(x) &= \textrm{``$x$ is a student in this class'' and}\\
+                Q(x) &= \textrm{``$x$ understands logic.''}
+                \end{align*}
+                The conclusion, $Q(\textrm{Xavier})$, is arrived from
+
+                \begin{center}
+                \begin{tabular}{|>{\columncolor[gray]{0.9}}r|l|l|}\hline
+                \texttt{1} & $\forall x \, (P(x) \rightarrow Q(x))$ & premise\\
+                \texttt{2} & $P(\textrm{Xavier})$ & premise \\
+                \texttt{3} & $(P(a) \rightarrow Q(a))$ for some person $a$ & universal instantiation from \texttt{1}\\
+                \texttt{4} & $P(\textrm{Xavier}) \rightarrow Q(\textrm{Xavier})$ & set $a = \textrm{Xavier}$\\
+                \texttt{5} & $Q(\textrm{Xavier})$ & modus ponens with \texttt{2} and \texttt{4}\\\hline
+                \end{tabular}
+                \end{center}
+                \vspace{0.1in}
+            \item[(c)] \fbox{Incorrect argument.} Let the domain consist of animals, and
+                \begin{align*}
+                R(y) &= \textrm{``$y$ is a parrot'' and}\\
+                S(y) &= \textrm{``$y$ likes fruit.''}
+                \end{align*}
+                The conclusion, $\neg S(\textrm{my pet bird})$, is invalid;
+
+                \begin{center}
+                \begin{tabular}{|>{\columncolor[gray]{0.9}}r|l|l|}\hline
+                \texttt{1} & $\forall y \, (R(y) \rightarrow S(y))$ & premise\\
+                \texttt{2} & $\neg R(\textrm{my pet bird})$ & premise\\
+                \texttt{3} & $(R(b) \rightarrow S(b))$ for some animal $b$ & universal instantiation from \texttt{1}\\
+                \texttt{4} & $R(\textrm{my pet bird}) \rightarrow S(\textrm{my pet bird})$ & set $b = \textrm{my pet bird}$\\\hline
+                \end{tabular}
+                \end{center}
+
+                from here it would be a fallacy of denying the hypothesis to say $(\neg R(\textrm{my pet bird})) \rightarrow \neg S(\textrm{my pet bird})$. It is indeterminate whether ``my pet bird'' likes fruit.
+        \end{itemize}
+    \item[17.] The argument misuses existential instantiation. The correct rule is
+
+                    \begin{tabular}{cl}
+                    & $\exists x \, H(x)$ \\\cline{2-2}
+                    $\therefore$ & $H(c)$ for some element $c$ in the domain
+                    \end{tabular}
+
+                where $c$ cannot be set to any \emph{specific} element, such as Lola.
+    \item[23.] The variable $c$ used in (5) cannot be assumed equal to the variable of the same name in (3). A different variable name, perhaps $d$, would be required in (5).
+    \item[{[\S 1.7]} 3.] \underline{Proof.} Let $n$ be an even number. By definition,
+    \[
+    n = 2k
+    \]
+    where $k$ is an integer. Squaring both sides gives
+    \begin{align*}
+    n^2 &= (2k)^2 \\
+    &= 4k^2 \\
+    &= 2 (2k^2).
+    \end{align*}
+    Because $2k^2$ is also an integer, the equation above shows that $n^2$ equals $2$ times an integer, that is, an even number. $\square$
+    \item[5.] \underline{Proof.} By the definition of an even integer,
+    \[
+    m+n = 2a
+    \]
+    and
+    \[
+    n+p = 2b
+    \]
+    where $a$ and $b$ are integers. Using these equalities, the sum of $m$ and $p$ is
+    \begin{align*}
+    m+p &= (m+n)+(n+p)-2n \\
+    &= 2a + 2b - 2n \\
+    &= 2(a+b-n).
+    \end{align*}
+
+    Because $a$, $b$, and $n$ are integers, $a+b-n$ is also an integer, so the above shows $m+p$ equals $2$ times an integer. Thus $m+p$ is even. $\square$ \fbox{This was a direct proof.}
+    \item[9.] \underline{Proof.} (By contradiction.) Let $x$ be an irrational number and $y$ be a rational number. Assume for the purposes of contradiction that the sum of $x$ and $y$ is rational, that is,
+    \[
+    x + y = \frac{p}{q}
+    \]
+    where $p$ and $q$ are integers. Then
+    \[
+    x = \frac{p}{q} - y
+    \]
+    is equivalent to
+    \[
+    x = \frac{p}{q} - \frac{r}{s}
+    \]
+    where $r$ and $s$ are integers, since $y$ is rational. By cross-multiplication on the right hand side,
+    \[
+    x = \frac{ps - rq}{qs};
+    \]
+    since $ps-rq$ and $qs$ are integers, $x$ is rational. This contradicts the premise that $x$ is irrational, so the assumption that $x+y$ is rational is false. That is, $x+y$ is irrational. $\square$
+    \item[10.] \underline{Proof.} Let $x$ and $y$ be rational numbers. By definition, $x$ and $y$ can be expressed as
+    \[
+    x = \frac{a}{b}
+    \]
+    and
+    \[
+    y = \frac{c}{d}
+    \]
+    where $a$, $b$, $c$, and $d$ are integers. Then the product of $x$ and $y$ is
+    \[
+    xy = \frac{ac}{bd}
+    \]
+    where $ac$ and $bd$ are integers because the product of any two integers is an integer. Since $xy$ can be expressed as the ratio of two integers, it is rational. $\square$
+    \item[15.] \underline{Proof.} (By contraposition.) Assume $((x \ge 1) \lor (y \ge 1))$ is false. Then, by De~Morgan's law,
+    \[
+    (x < 1) \land (y < 1),
+    \]
+    which implies
+    \[
+    x + y < 2.
+    \]
+    This is the negation of $(x + y \ge 2)$. Because the negation of the conclusion of the conditional statement implies that the hypothesis is false, the original conditional statement is true: $((x \ge 1) \lor (y \ge 1))$. $\square$
+    \item[26.] The biconditional statement to be proven in both directions is that for any positive integer $n$,
+    \[
+    n \textrm{ is even} \Leftrightarrow 7n+4 \textrm{ is even.}
+    \]
+    \underline{Proof ($\Rightarrow$).} Suppose $n$ is even. Then
+    \[
+    n = 2k
+    \]
+    where $k$ is an integer. Then
+    \begin{align*}
+    7n+4 &= 7(2k)+4 \\
+    &= 2(7k+2)
+    \end{align*}
+    Since $7k+2$ is also an integer, the above is an expression of $7n+4$ as $2$ times an integer, which implies that $7n+4$ is even. $\square$
+
+    \underline{Proof ($\Leftarrow$).} Suppose $7n+4$ is even. Then
+    \[
+    7n+4 = 2p
+    \]
+    where $p$ is an integer. Dividing both sides by $2$ gives
+    \[
+    p = \frac{7}{2}n + 2.
+    \]
+    Since $p$ is an integer, $n$ is a multiple of $2$ so that the fractional term reduces to an integer. Because $n$ is a multiple of $2$, $n$ is even. $\square$
+    \item[33.] It suffices to show that for all real numbers $x$,
+    \[
+    x \textrm{ irrational} \overset{\textcircled{a}}{\longrightarrow} 3x+2 \textrm{ irrational} \overset{\textcircled{b}}{\longrightarrow} \frac{x}{2} \textrm{ irrational} \overset{\textcircled{c}}{\longrightarrow} x \textrm{ irrational}.
+    \]
+    \underline{Proof $\textcircled{a}$.} (By contraposition.) Assume $3x+2$ is rational, that is,
+    \[
+    3x+2 = \frac{p}{q}
+    \]
+    where $p$ and $q$ are integers. Then, by subtracting $2$ from both sides and dividing by $3$,
+    \begin{align*}
+    x &= \frac{1}{3}\left( \frac{p}{q}-2 \right) \\
+    &= \frac{p-2q}{3q}.
+    \end{align*}
+    Since both $p-2q$ and $3q$ are integers, $x$ is rational. Because the negation of the conclusion of the conditional statement implies that the hypothesis is false, the original conditional statement is true. $\square$
+
+    \underline{Proof $\textcircled{b}$.} (By contraposition.) Assume $x/2$ is rational, that is,
+    \[
+    \frac{x}{2} = \frac{r}{s}
+    \]
+    where $r$ and $s$ are integers. Multiplying both sides by $6$ gives
+    \[
+    3x = \frac{6r}{s},
+    \]
+    whereupon adding $2$ to both sides gives
+    \begin{align*}
+    3x + 2 &= \frac{6r}{s} + 2\\
+    &= \frac{6r+2s}{s}.
+    \end{align*}
+    Since both $6r+2s$ and $s$ are integers, $3x+2$ is rational. Because the negation of the conclusion of the conditional statement implies that the hypothesis is false, the original conditional statement is true. $\square$
+
+    \underline{Proof $\textcircled{c}$.} (By contraposition.) Assume $x$ is rational, that is,
+    \[
+    x = \frac{u}{v}
+    \]
+    where $u$ and $v$ are integers. Dividing both sides by $2$ gives
+    \[
+    \frac{x}{2} = \frac{u}{2v}.
+    \]
+    Since both $u$ and $2v$ are integers, $x/2$ is rational. Because the negation of the conclusion of the conditional statement implies that the hypothesis is false, the original conditional statement is true. $\square$
+    \item[41.] It suffices to show that for all integers $n$,
+    \[
+    n \textrm{ even} \overset{\textcircled{a}}{\longrightarrow} n+1 \textrm{ odd} \overset{\textcircled{b}}{\longrightarrow} 3n+1 \textrm{ odd} \overset{\textcircled{c}}{\longrightarrow} 3n \textrm{ even} \overset{\textcircled{d}}{\longrightarrow} n \textrm{ even}.
+    \]
+
+    \underline{Proof $\textcircled{a}$.} Suppose $n$ is even. Then
+    \[
+    n = 2k
+    \]
+    where $k$ is an integer. Then
+    \[
+    n+1 = 2k+1
+    \]
+    where $2k+1$ is an integer that is not divisible by $2$, so by definition, $n+1$ is odd. $\square$
+
+    \underline{Proof $\textcircled{b}$.} Suppose $n+1$ is odd. Then
+    \[
+    n+1 = 2k+1
+    \]
+    where $k$ is an integer. Then
+    \begin{align*}
+    3n+1 &= 2n + (n+1) \\
+    &= 2n + (2k+1)\\
+    &= 2(n+k) + 1,
+    \end{align*}
+    and since $(n+k)$ is an integer, $2(n+k) + 1$ is not divisible by $2$. Therefore, $3n+1$ is odd. $\square$
+
+    \underline{Proof $\textcircled{c}$.} Suppose $3n+1$ is odd. Then
+    \[
+    3n+1 = 2k+1
+    \]
+    where $k$ is an integer. Subtracting $1$ from both sides gives
+    \[
+    3n = 2k,
+    \]
+    which means $3n$ is even since it equals $2$ times an integer. $\square$
+
+    \underline{Proof $\textcircled{d}$.} (By contraposition.) Assume $n$ is odd, that is,
+    \[
+    n = 2k+1
+    \]
+    where $k$ is an integer. Then
+    \begin{align*}
+    3n &= 3(2k+1)\\
+    &= 6k+3 \\
+    &= 6k+2+1 \\
+    &= 2(3k+1)+1,
+    \end{align*}
+    and since $(3k+1)$ is an integer, $2(3k+1)+1$ is not divisible by $2$, so $3n$ is odd. Because the negation of the conclusion of the conditional statement implies that the hypothesis is false, the original conditional statement is true. $\square$
+    \item[{[\S 1.8]} 1.] \underline{Proof.} (By exhaustion.) If $n=1$,
+    \[
+    (1^1 + 1 = 2) \ge (2^1 = 2);
+    \]
+    if $n=2$,
+    \[
+    (2^2 + 1 = 5) \ge (2^2 = 4);
+    \]
+    if $n=3$,
+    \[
+    (3^2 + 1 = 10) \ge (2^3 = 8);
+    \]
+    if $n=4$,
+    \[
+    (4^2 + 1 = 17) \ge (2^4 = 16).
+    \]
+    $\square$
+    \item[3.] \underline{Proof.} There are two cases to consider.
+
+    \emph{Case 1.} Suppose $x \ge y$. Then
+    \[
+    \max(x,y) = x
+    \]
+    and
+    \[
+    \min(x,y) = y,
+    \]
+    so
+    \[
+    \max(x,y) + \min(x,y) = x+y.
+    \]
+
+    \emph{Case 2.} Suppose $x < y$. Then
+    \[
+    \max(x,y) = y
+    \]
+    and
+    \[
+    \min(x,y) = x,
+    \]
+    so
+    \[
+    \max(x,y) + \min(x,y) = y+x,
+    \]
+    which, by the commutative property of addition, is equivalent to $x+y$. $\square$
+    % TKTK TKTK
+\end{enumerate}
+\end{document}
