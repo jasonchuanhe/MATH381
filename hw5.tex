@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+%\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{tikz}
+\pagestyle{fancy}
+
+\lhead{MATH381.004 --- Homework 5}
+\rhead{\textbf{Jason He}}
+
+% 2.3:   2, 6(a)(b), 8(f)(g)(h), 23(a)(b), 28, 31(a)(b), 36, 38, 39, 64.
+
+\begin{document}
+\begin{enumerate}
+    \item[{[\S 2.3]} 2.]
+        \begin{itemize}
+            \item[(a)] \fbox{No.} For all nonzero $n \in \mathbb{Z}$, $f$ attempts to assign more than one element of $\mathbb{R}$.
+            \item[(b)] \fbox{Yes.} For all $n \in \mathbb{Z}$, $f$ assigns exactly one element of $\mathbb{R}$.
+            \item[(c)] \fbox{No.} Although $2 \in \mathbb{Z}$, it cannot be in the domain of $f$ (to avoid division by zero).
+        \end{itemize}
+    \item[6.]
+        \begin{itemize}
+            \item[(a)] Domain: $\mathbb{Z}^+ \times \mathbb{Z}^+$\\ Range: $\mathbb{Z}^+$
+            \item[(b)] Domain: $\mathbb{Z}^+$\\ Range: $\{ x \in \mathbb{Z} \mid 1 \le x \le 9 \}$
+        \end{itemize}
+    \item[8.]
+        \begin{itemize}
+            \item[(f)] \fbox{$-2$}
+            \item[(g)] $\lfloor \frac{1}{2} + 1 \rfloor$ = \fbox{$1$}
+            \item[(h)] $\lceil 0 + 1 + \frac{1}{2} \rceil$ = \fbox{$2$}
+        \end{itemize}
+    \item[23.]
+        \begin{itemize}
+            \item[(a)] \fbox{Yes.}\\
+                        $f$ is one-to-one: $2x+1 \neq 2y+1$ when $x \neq y$.\\
+                        $f$ is onto: for all $y \in \mathbb{R}$ there is an $x \in \mathbb{R}$ such that $2x+1=y$. Namely, $x = \frac{y-1}{2}$.
+            \item[(b)] \fbox{No.} For example, $f(1) = 2 = f(-1)$.
+        \end{itemize}
+    \item[28.] $f : \mathbb{R} \to \mathbb{R}$ is not invertible because there is no $x \in \mathbb{R}$ such that $e^x \le 0$.\\
+                $f : \mathbb{R} \to \mathbb{R}^+$ is invertible because it is:
+                \begin{itemize}
+                    \item[$\bullet$] one-to-one because $e^x$ is strictly increasing, and
+                    \item[$\bullet$] onto because for all $y \in \mathbb{R}^+$ there is an $x \in \mathbb{R}$ such that $e^x = y$. Namely, $x = \log_{e}(y)$.
+                \end{itemize}
+    \item[31.]
+        \begin{itemize}
+            \item[(a)] \fbox{$f(S) = \{ 1,0,3 \}$}
+            \begin{flushleft}
+                \begin{tabular}{c|c}
+                $x$ & $f(x)$ \\\hline
+                $\pm 2$ & $\lfloor 4/3 \rfloor = 1$\\
+                $\pm 1$ & $\lfloor 1/3 \rfloor = 0$\\
+                $0$ & $\lfloor 0/3 \rfloor = 0$\\
+                $3$ & $\lfloor 9/3 \rfloor = 3$
+                \end{tabular}
+            \end{flushleft}
+            \item[(b)] \fbox{$f(S) = \{ 1,0,3,5,8 \}$}
+            \begin{flushleft}
+                \begin{tabular}{c|c}
+                $x$ & $f(x)$ \\\hline
+                $4$ & $\lfloor 16/3 \rfloor = 5$\\
+                $5$ & $\lfloor 25/3 \rfloor = 8$
+                \end{tabular}
+            \end{flushleft}
+        \end{itemize}
+    \item[36.] $f \circ g$ is $f(g(x)) = f(x+2) = (x+2)^2 + 1$\\
+                $g \circ f$ is $g(f(x)) = g(x^2+1) = x^2 + 3$
+    \item[38.] $f(g(x)) = a(cx+d)+b$ and $g(f(x)) = c(ax+b)+d$. Rearrangement gives
+        \begin{align*}
+        f(g(x)) &= acx + ad + b \textrm{ and} \\
+        g(f(x)) &= acx + cb + d,
+        \end{align*}
+        where the $acx$ term is common, so \fbox{$ad+b = cb+d$ is necessary and sufficient for $f \circ g = g \circ f$.}
+    \item[39.] $f$ is invertible because it is:
+        \begin{itemize}
+            \item[$\bullet$] one-to-one because $ax+b \neq ay+b$ when $a \neq 0$ and $x \neq y$, and
+            \item[$\bullet$] onto because, given $a \neq 0$, for all $y \in \mathbb{R}$ there is an $x \in \mathbb{R}$ such that $ax+b=y$. Namely, $x = \frac{y-b}{a}$ and $a \neq 0$.
+        \end{itemize}
+        Therefore the inverse of $f$ is
+        \[
+        f^{-1}(y) = \frac{y-b}{a} \quad (a \neq 0).
+        \]
+    \item[64.] \hfill
+        \begin{flushleft}
+            \begin{tabular}{c|ccccccccccc}
+                $x$ & $\cdots$ & $-4$ & $\cdots$ & $-2$ & $\cdots$ & $0$ & $\cdots$ & $2$ & $\cdots$ & $4$ & $\cdots$ \\\hline
+                $\lfloor x/2 \rfloor$ & $\cdots$ & $-2$ & $-2$ & $-1$ & $-1$ & $0$ & $0$ & $1$ & $1$ & $2$ & $\cdots$
+            \end{tabular}
+        \end{flushleft}
+        \begin{center}
+        \begin{tikzpicture}
+        \draw[->, thick] (-5,0)--(5,0) node[right]{$x$};
+        \draw[->, thick] (0,-5)--(0,5) node[above]{$f(x)$};
+        \draw[help lines, densely dashed] (-4.9,-4.9) grid (4.9,4.9);
+        \end{tikzpicture}
+        \end{center}
+        \begin{flushright}
+        (plotted over gridlines by hand)
+        \end{flushright}
+\end{enumerate}
+\end{document}
