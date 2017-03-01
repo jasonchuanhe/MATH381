@@ -1,0 +1,239 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+%\usepackage{colortbl}
+\usepackage{enumitem}
+%\usepackage{tikz}
+\usepackage{textcomp}
+\pagestyle{fancy}
+
+\lhead{MATH381.004 --- Homework 6}
+\rhead{\textbf{Jason He}}
+
+% 5.1:  3, 6, 10, 18, 21, 32, 38, 49
+
+% 5.2:  3, 7. 
+
+\begin{document}
+\begin{enumerate}
+    \item[{[\S 5.1]} 3.]
+        \begin{itemize}
+            \item[(a)] $P(1) = \text{``}1^2 = \dfrac{1(1+1)(2\cdot 1 + 1)}{6}\text{''}$
+            \item[(b)] $1^2 = 1$ and $\dfrac{1(1+1)(2\cdot 1 + 1)}{6} = \dfrac{6}{6} = 1$. Thus $P(1)$ is true.
+            \item[(c)] $P(k) = \text{``}k^2 = \dfrac{k(k+1)(2k+1)}{6}\text{''}$ for some positive integer $k$.
+            \item[(d)] $P(k) \rightarrow P(k+1)$ is true for all positive integers $k$.
+            \item[(e)] Assume $P(k)$ is true for some positive integer $k$. It will be shown that $P(k+1)$ is true, namely, that
+            \[
+            1^2 + 2^2 \cdots + (k+1)^2 = \frac{(k+1)((k+1)+1)(2(k+1)+1)}{6} = \frac{(k+1)(k+2)(2k+3)}{6}
+            \]
+            is also true. Adding $(k+1)^2$ to both sides of the equation in $P(k)$ gives
+            \begin{align*}
+            1^2 + \cdots + k^2 + (k+1)^2 &\overset{\mathrm{IH}}{=} \frac{k(k+1)(2k+1)}{6} + (k+1)^2 \tag*{\small{by the inductive hypothesis}}\\
+            &= \frac{k(k+1)(2k+1)}{6} + \frac{6(k+1)^2}{6}\\
+            &= \frac{(k+1)(k(2k+1)+6(k+1))}{6}\\
+            &= \frac{(k+1)(2k^2+7k+6)}{6}\\
+            &= \frac{(k+1)(k+2)(2k+3)}{6}.
+            \end{align*}
+            Thus $P(k+1)$ follows from $P(k)$. This completes the inductive step.
+            \item[(f)] Part (b) shows $P(1)$ is true and part (e) shows $\forall k \in \mathbb{Z}^+ \, \left( P(k) \rightarrow P(k+1) \right)$ is true.
+
+            By the principle of mathematical induction, $\forall n \in \mathbb{Z}^+ \, P(n)$ is true.
+        \end{itemize}
+    \item[6.] \textit{Proof by induction.} Let $P(n) = \text{``}1 \cdot 1! + 2 \cdot 2! + \cdots + n \cdot n! = (n+1)!-1\text{''}$ for all $n \in \mathbb{Z}^+$.
+
+    \underline{Basis step.} $P(1)$ is true: $1 \cdot 1! = 1$ and $(1+1)!-1 = 1$.
+
+    \underline{Inductive step.} Assume $P(k)$ is true for some $k \in \mathbb{Z}^+$. It will be shown that $P(k+1)$ is true, namely, that
+    \[
+    1 \cdot 1! + 2 \cdot 2! + \cdots + (k+1) \cdot (k+1)! = (k+2)! -1
+    \]
+    is also true. Adding $(k+1) \cdot (k+1)!$ to both sides of the equation in $P(k)$ gives
+    \begin{align*}
+    1 \cdot 1! + \cdots + k \cdot k! + (k+1) \cdot (k+1)! &\overset{\mathrm{IH}}{=} (k+1)!-1 + (k+1) \cdot (k+1)!\tag*{\small{by the ind.~hyp.}}\\
+    &= \underbrace{(k+1)! \cdot (1+(k+1))}_{1 \cdots (k+1)(k+2)}-1\\
+    &= (k+2)!-1
+    \end{align*}
+    Thus $P(k+1)$ follows from $P(k)$. This completes the inductive step.
+
+    By the principle of mathematical induction, $P(n)$ is true for all $n \in \mathbb{Z}^+$. $\square$
+    \item[10.]
+        \begin{itemize}
+            \item[(a)] The formula is
+            \[
+            \frac{1}{1\cdot 2} + \frac{1}{2\cdot 3} + \cdots + \frac{1}{n(n+1)} = \frac{n}{n+1}.
+            \]
+            \begin{tabular}{cc}\hline
+            $n$ & expression value\\\hline
+            $1$ & $1/2$ \\
+            $2$ & $2/3$ \\
+            $3$ & $3/4$ \\
+            $4$ & $4/5$ \\\hline
+            \end{tabular}
+            \item[(b)] \textit{Proof by induction.} Let $P(n) = \text{``}\frac{1}{1\cdot 2} + \frac{1}{2\cdot 3} + \cdots + \frac{1}{n(n+1)} = \frac{n}{n+1}\text{''}$ for all $n \in \mathbb{Z}^+$.
+
+            \underline{Basis step.} $P(1)$ is true: $\dfrac{1}{1(1+1)} = \dfrac{1}{2}$ and $\dfrac{1}{1+1} = \dfrac{1}{2}$.
+
+            \underline{Inductive step.} Assume $P(k)$ is true for some $k \in \mathbb{Z}^+$. It will be shown that $P(k+1)$ is true, namely, that
+            \[
+            \frac{1}{1\cdot 2} + \cdots + \frac{1}{(k+1)(k+2)} = \frac{k+1}{k+2}
+            \]
+            is also true. Adding $\frac{1}{(k+1)(k+2)}$ to both sides of the equation in $P(k)$ gives
+            \begin{align*}
+            \frac{1}{1\cdot 2} + \cdots + \frac{1}{k(k+1)} + \frac{1}{(k+1)(k+2)} &\overset{\mathrm{IH}}{=} \frac{k}{k+1} + \frac{1}{(k+1)(k+2)}\tag*{\small{by the ind.~hyp.}}\\
+            &= \frac{k(k+2)+1}{(k+1)(k+2)}\\
+            &= \frac{k^2+2k+1}{(k+1)(k+2)}\\
+            &= \frac{(k+1)^2}{(k+1)(k+2)}\\
+            &= \frac{k+1}{k+2}
+            \end{align*}
+            Thus $P(k+1)$ follows from $P(k)$. This completes the inductive step.
+
+            By the principle of mathematical induction, $P(n)$ is true for all $n \in \mathbb{Z}^+$. $\square$
+        \end{itemize}
+    \item[18.]
+        \begin{itemize}
+            \item[(a)] $P(2) = \text{``}2! < 2^2\text{''}$
+            \item[(b)] $2! = 2$, which is less than $2^2 = 4$.
+            \item[(c)] $P(k) = \text{``}k! < k^k\text{''}$ for some integer $k > 1$.
+            \item[(d)] $P(k) \rightarrow P(k+1)$ is true for all positive integers $k > 1$.
+            \item[(e)] Assume $P(k)$ is true for some integer $k > 1$. It will be shown that $P(k+1)$ is true, namely, that
+            \[
+            (k+1)! < (k+1)^{k+1}
+            \]
+            is also true. Multiplying both sides of the equation in $P(k)$ by $(k+1)$ gives
+            \begin{align*}
+            k!(k+1) &\overset{\mathrm{IH}}{<} k^k (k+1)\tag*{\small{by the ind.~hyp.}}\\
+            &< (k+1)^k (k+1)\\
+            &= (k+1)^{k+1}
+            \end{align*}
+            Thus $P(k+1)$ follows from $P(k)$. This completes the inductive step.
+            \item[(f)] Part (b) shows $P(2)$ is true and part (e) shows $\left( P(k) \rightarrow P(k+1) \right)$ is true for all integers $k > 1$.
+
+            By the principle of mathematical induction, $P(n)$ is true for all integers $n > 1$.
+        \end{itemize}
+    \item[21.] \textit{Proof by induction.} Let $P(n) = \text{``}2^n > n^2\text{''}$ for all integers $n > 4$.
+
+    \underline{Basis step.} $P(5)$ is true: $2^5 = 32$ is greater than $5^2 = 25$.
+
+    \underline{Inductive step.} Assume $P(k)$ is true for some integer $k > 4$. It will be shown that $P(k+1)$ is true, namely, that
+    \[
+    2^{k+1} > (k+1)^2
+    \]
+    is also true. Multiplying both sides of the equation in $P(k)$ by $2$ gives
+    \[
+    2^k 2 \overset{\mathrm{IH}}{>} 2 k^2
+    \]
+    by the inductive hypothesis. Now, observe that (since $k>4$)
+    \begin{align*}
+    (k+1)^2 &= k^2 + 2k + 1\\
+    &< k^2 + 3k\\
+    &< k^2 + k^2
+    \end{align*}
+    where the final term on the right hand side is equal to $2k^2$. Hence
+    \[
+    2^k 2 \overset{\mathrm{IH}}{>} 2 k^2 > (k+1)^2
+    \]
+    and so $P(k+1)$ follows from $P(k)$. This completes the inductive step.
+
+    By the principle of mathematical induction, $P(n)$ is true for all integers $n > 4$. $\square$
+    \item[32.] \textit{Proof by induction.} Let $P(n) = \text{``} 3 \,\vert\, (n^3 + 2n) \text{''}$ for all $n \in \mathbb{Z}^+$.
+
+    \underline{Basis step.} $P(1)$ is true: $1^3 + 2 \cdot 1 = 3$, which is divisible by $3$.
+
+    \underline{Inductive step.} Assume $P(k)$ is true for some $k \in \mathbb{Z}^+$. It will be shown that $P(k+1)$ is true, namely, that
+    \[
+    3 \,\vert\, ((k+1)^3 + 2(k+1))
+    \]
+    is also true. Algebraic manipulation gives
+    \begin{align*}
+    (k+1)^3 + 2(k+1) &= k^3 + 3k^2 + 5k + 3\\
+    &= \underbrace{k^3 + 2k}_{\text{dividend in $P(k)$}} + 3(k^2+k+1),
+    \end{align*}
+    where the bracketed term is divisible by $3$ by the inductive hypothesis, and the remaining term is divisible by $3$ because it is an integer multiple of $3$.
+
+    Thus the entire sum is divisible by $3$, and $P(k+1)$ follows from $P(k)$. This completes the inductive step.
+
+    By the principle of mathematical induction, $P(n)$ is true for all $n \in \mathbb{Z}^+$. $\square$
+    \item[38.] \textit{Proof by induction.} Let $P(n) = \text{``} A_j \subseteq B_j \text{ for } j = 1, \ldots, n \Rightarrow \displaystyle\bigcup_{j=1}^n A_j \subseteq \bigcup_{j=1}^n B_j \text{''}$ for all $n \in \mathbb{Z}^+$.
+
+    \underline{Basis step.} $P(1)$ is true: $A_1 \subseteq B_1 \Rightarrow \bigcup_{j=1}^1 A_j \subseteq \bigcup_{j=1}^1 B_j$ because the union of one set is itself.
+
+    \underline{Inductive step.} Assume $P(k)$ is true for some $k \in \mathbb{Z}^+$. It will be shown that $P(k+1)$ is true, namely, that
+    \[
+    A_{k+1} \subseteq B_{k+1} \Rightarrow \bigcup_{j=1}^{k+1} A_j \subseteq \bigcup_{j=1}^{k+1} B_j
+    \]
+    is also true. It suffices to show $\bigcup_{j=1}^{k+1} A_j \subseteq \bigcup_{j=1}^{k+1} B_j$ is true.
+
+    First, observe that
+    \[
+    \bigcup_{j=1}^{k+1} A_j = \left( \bigcup_{j=1}^{k} A_j \right) \cup A_{k+1} \qquad\text{and}\qquad \bigcup_{j=1}^{k+1} B_j = \left( \bigcup_{j=1}^{k} B_j \right) \cup B_{k+1}.
+    \]
+    Next, denote an arbitrary element $x \in \bigcup_{j=1}^{k+1} A_j$; equivalently,
+    \[
+    \left( x \in \bigcup_{j=1}^{k} A_j \right) \lor \left( x \in A_{k+1} \right). 
+    \]
+    \textit{Case 1.} Suppose $x \in \bigcup_{j=1}^{k} A_j$.
+
+    \hspace{0.25in} By the inductive hypothesis and by the definition of a subset, $x \in \bigcup_{j=1}^{k} B_j$.
+
+    \textit{Case 2.} Suppose $x \in A_{k+1}$.
+
+    \hspace{0.25in} By the premise in $P(k+1)$ and by the definition of a subset, $x \in B_{k+1}$.
+
+    \vspace{0.25in}
+
+    Hence
+    \[
+    \left( x \in \bigcup_{j=1}^{k} B_j \right) \lor \left( x \in B_{k+1} \right);
+    \]
+    equivalently, $x \in \bigcup_{j=1}^{k+1} B_j$. Now since
+    \[
+    x \in \bigcup_{j=1}^{k+1} A_j \Rightarrow x \in \bigcup_{j=1}^{k+1} B_j
+    \]
+    is true, it must also be true (by the definition of a subset) that
+    \[
+    \bigcup_{j=1}^{k+1} A_j \subseteq \bigcup_{j=1}^{k+1} B_j,
+    \]
+    so $P(k+1)$ follows from $P(k)$. This completes the inductive step.
+
+    By the principle of mathematical induction, $P(n)$ is true for all integers $n \in \mathbb{Z}^+$. $\square$
+    \item[49.] The assertion that the first $k$ and last $k$ horses overlap,
+    \[
+    \underbrace{1, 2, 3, \ldots, k}_{\text{same color}}, k+1 \qquad\text{and}\qquad 1, \underbrace{2, 3, \ldots, k, k+1}_{\text{same color}},
+    \]
+    is false when $k=1$. Then no horses exist between $1$ and $k+1$, which may be different colors.
+    \item[{[\S 5.2]} 3.]
+        \begin{itemize}
+            \item[(a)] $P(8) = 1\cdot 3\text{\textcent} + 1 \cdot 5\text{\textcent}$
+
+            $P(9) = 3 \cdot 3\text{\textcent} + 0 \cdot 5\text{\textcent}$
+
+            $P(10) = 0 \cdot 3\text{\textcent} + 2 \cdot 5\text{\textcent}$
+            \item[(b)] $P(n)$ is true for $8 \le n \le k$ where $k \ge 10$ and $n,k$ are integers.
+            \item[(c)] $[P(8) \land P(9) \land P(10) \land \cdots \land P(k)] \rightarrow P(k+1)$ for every integer $k \ge 10$.
+            \item[(d)] If $k \ge 10$, then
+            \[
+            k+1 = \underbrace{(k-2)}_{\ge 8}+3.
+            \]
+            By the inductive hypothesis, $P(k-2)$ is true. The above equation shows that by adding one 3\textcent\, stamp, $P(k+1)$ is true.
+            \item[(e)] The basis step in part (a) and the inductive step in part (d) have been completed, so by strong induction, $P(n)$ is true for all positive integers $n \ge 8$.
+        \end{itemize}
+    \item[7.] Any dollar amount in $\mathbb{N}$ except \$1 and \$3 can be formed.
+
+    \$2 is one \$2 bill. \$4 is two \$2 bills. Let $P(n)$ be the statement that any integer $n \ge 5$ dollars can be formed using just \$2 and \$5 bills.
+
+    \textit{Proof (by strong induction).}
+
+    \underline{Basis step.} $P(5) = 0\cdot \$2 + 1 \cdot \$5 \qquad P(6) = 3\cdot \$2 + 0 \cdot \$5$.
+
+    \underline{Inductive step.} The inductive hypothesis is the statement that $P(j)$ is true for all $5 \le j \le k$ where $k \ge 6$ and $j,k$ are integers.
+
+    Since $k-1 \ge 5$, $P(k-1)$ is true by the inductive hypothesis. Since $k-1$ dollars can be formed, $k+1$ dollars can be formed by adding one \$2 bill.
+
+    Thus $P(k+1)$ is true. This completes the inductive step.
+
+    By strong induction, $P(n)$ is true for all integers $n \ge 5$. $\square$
+\end{enumerate}
+\end{document}
