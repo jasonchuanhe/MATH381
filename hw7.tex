@@ -1,0 +1,175 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{multirow}
+\usepackage{fancyhdr}
+%\usepackage{colortbl}
+%\usepackage{enumitem}
+%\usepackage{tikz}
+%\usepackage{textcomp}
+\pagestyle{fancy}
+
+\lhead{MATH381.004 --- Homework 7}
+\rhead{\textbf{Jason He}}
+
+% 4.1:  2,4,7,9 (b)(e)(g), 10(a)(d)(f), 12(a)(b), 13(a)(d)(e), 15, 23(a)(c), 24(a)(c), 35, 31(a), 32(a)(c), 45
+
+% 4.3:  2(d)(e), 4(a)(e), 14, 16(a), 32(c)(d), 40(b)(c).
+
+\begin{document}
+\begin{enumerate}
+    \item[{[\S 4.1]} 2.]
+        \begin{itemize}
+            \item[(a)] $1 = 1 \cdot a \Rightarrow 1 \mid a \quad\square$
+            \item[(b)] $0 = 0 \cdot a \Rightarrow a \mid 0 \quad\square$
+        \end{itemize}
+    \item[4.] Since $a \mid b$ and $b \mid c$, we can write
+        \begin{align*}
+        b &= as \\
+        c &= bt
+        \end{align*}
+        where $s$ and $t$ are integers. Then $c = ast \Rightarrow a \mid c$. $\square$
+    \item[7.] Since $ac \mid bc$, we can write $bc = acs$ for some integer $s$.
+
+    Since $c \neq 0$, the equation simplifies to $b = as \Rightarrow a \mid b$. $\square$
+    \item[9.]
+        \begin{itemize}
+            \item[(b)] quotient $-11$, remainder $10$
+            \item[(e)] quotient $0$, remainder $0$
+            \item[(g)] quotient $-1$, remainder $2$
+        \end{itemize}
+    \item[10.]
+        \begin{itemize}
+            \item[(a)] quotient $5$, remainder $4$
+            \item[(d)] quotient $-1$, remainder $22$
+            \item[(f)] quotient $0$, remainder $0$
+        \end{itemize}
+    \item[12.]
+        \begin{itemize}
+            \item[(a)] \fbox{6:00.} $(100 + 2) \bmod 24 = 6$.
+            \item[(b)] \fbox{15:00.} $(12 - 45) \bmod 24 = 15$.
+        \end{itemize}
+    \item[13.]
+        \begin{itemize}
+            \item[(a)] \fbox{$c = 10$.} $(9 \cdot 4) \bmod 13 = 10$.
+            \item[(d)] \fbox{$c = 9$.} $(2 \cdot 4 + 3 \cdot 9) \bmod 13 = 9$.
+            \item[(e)] \fbox{$c = 6$.} $(4^2 + 9^2) \bmod 13 = 6$.
+        \end{itemize}
+    \item[15.] Since $a \bmod m = b \bmod m$, there are integers $s$ and $t$ such that
+        \begin{align*}
+        a &= sm+r \\
+        b &= tm+r.
+        \end{align*}
+        Subtracting the second equation from the first gives $a-b = (s-t)m$ which implies $m \mid (a-b)$, i.e., $a \equiv b \pmod m$. $\square$
+    \item[23.]
+        \begin{itemize}
+            \item[(a)] $228 \,\operatorname{div}\, 119 = 1$
+
+            $228 \bmod 119 = 109$
+            \item[(c)] $-10101 \,\operatorname{div}\, 333 = -31$
+
+            $-10101 \bmod 333 = 222$
+        \end{itemize}
+    \item[24.]
+        \begin{itemize}
+            \item[(a)] \fbox{$a = -3$.} This is $43+k \cdot 23$ for $k = -2$.
+            \item[(c)] \fbox{$a = 94$.} This is $-11+k \cdot 21$ for $k = 5$.
+        \end{itemize}
+    \item[{\fontencoding{U}\fontfamily{futs}\selectfont\char 66\relax} 31--32.] \emph{Consistent with the order in which questions were assigned, my answers to 31(a) and 32(a)(c) appear \underline{after} 35 on the next page.}
+    \item[35.] $a \equiv b \pmod m \Rightarrow m \mid (a-b)$, and since $n \mid m$, it is also the case that $n \mid (a-b)$. Therefore, by definition, $a \equiv b \pmod n$. $\square$
+    \item[31a.] The expression simplifies to $(-133 + 261) \bmod 23 = \boxed{13}$
+    \item[32.]
+        \begin{itemize}
+            \item[(a)] $(19^2 \bmod 41) \bmod 9 = 33 \bmod 9 = \boxed{6}$
+            \item[(c)] $(7^3 \bmod 23)^2 \bmod 31 = 441 \bmod 31 = \boxed{7}$
+        \end{itemize}
+    \item[45.] \hfill
+
+    \begin{tabular}{|c|rrrrr|}
+    \hline
+    $+_5$ & $0$ & $1$ & $2$ & $3$ & $4$ \\\hline
+    $0$ & $0$ & $1$ & $2$ & $3$ & $4$ \\
+    $1$ & $1$ & $2$ & $3$ & $4$ & $0$ \\
+    $2$ & $2$ & $3$ & $4$ & $0$ & $1$ \\
+    $3$ & $3$ & $4$ & $0$ & $1$ & $2$ \\
+    $4$ & $4$ & $0$ & $1$ & $2$ & $3$ \\\hline
+    \end{tabular} \qquad
+    \begin{tabular}{|c|rrrrr|}
+    \hline
+    $\cdot_5$ & $0$ & $1$ & $2$ & $3$ & $4$ \\\hline
+    $0$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+    $1$ & $0$ & $1$ & $2$ & $3$ & $4$ \\
+    $2$ & $0$ & $2$ & $4$ & $1$ & $3$ \\
+    $3$ & $0$ & $3$ & $1$ & $4$ & $2$ \\
+    $4$ & $0$ & $4$ & $3$ & $2$ & $1$ \\\hline
+    \end{tabular}
+    \item[{[\S 4.3]} 2.]
+        \begin{itemize}
+            \item[(d)] \fbox{Yes.} $101$ has no positive factors other than $1$ and $101$
+            \item[(e)] \fbox{Yes.} $107$ has no positive factors other than $1$ and $107$
+        \end{itemize}
+    \item[4.]
+        \begin{itemize}
+            \item[(a)] $39 = 3 \cdot 13$
+            \item[(e)] $289 = 17 \cdot 17$
+        \end{itemize}
+    \item[14.] \fbox{$1$, $5$, $7$, and $11$} are relatively prime to $12$.
+    \item[16a.] \fbox{Yes, the set is pairwise relatively prime.} $\gcd(21,34) = \gcd(21,55) = \gcd(34,55) = 1$.
+    \item[32.]
+        \begin{itemize}
+            \item[(c)] \fbox{$\gcd(277,123) = 1$} because $1$ is the last nonzero remainder.
+            \begin{align*}
+            277 &= 2 \cdot 123 + 31 \\
+            123 &= 3 \cdot 31 + 30\\
+            31 &= 1 \cdot 30 + 1\\
+            30 &= 30 \cdot 1
+            \end{align*}
+            \item[(d)] \fbox{$\gcd(1529,14039) = 139$} because $139$ is the last nonzero remainder.
+            \begin{align*}
+            14039 &= 9 \cdot 1529 + 278\\
+            1529 &= 5 \cdot 278 + 139\\
+            278 &= 2 \cdot 139
+            \end{align*}
+        \end{itemize}
+    \item[40.]
+        \begin{itemize}
+            \item[(b)] By the Euclidean algorithm,
+            \begin{align*}
+            44 &= 1 \cdot 33 + 11\\
+            33 &= 3 \cdot 11,
+            \end{align*}
+            so $\gcd(33,44) = 11$. By subtracting $1 \cdot 33$ from both sides of the first equation,
+            \[
+            11 = -1 \cdot 33 + 1 \cdot 44.
+            \]
+            \item[(c)] By the Euclidean algorithm,
+            \begin{align*}
+            78 &= 2 \cdot 35 + 8\\
+            35 &= 4 \cdot 8 + 3\\
+            8 &= 2 \cdot 3 + 2\\
+            3 &= 1 \cdot 2 + 1\\
+            2 &= 2 \cdot 1,
+            \end{align*}
+            so $\gcd(35,78) = 1$. Working upward to find substitute terms,
+            \begin{align*}
+            1 &= 3 - 1 \cdot 2 \\
+            &= 3 - (8 - 2 \cdot 3) \\
+            &= (35 - 4 \cdot 8) - (8 - 2 \cdot (35 - 4 \cdot 8)) \\
+            &= 35 - 4 \cdot 8 - (8 - 2 \cdot 35 + 8 \cdot 8) \\
+            &= 35 - 4 \cdot (78 - 2 \cdot 35) - (9 \cdot (78 - 2 \cdot 35) - 2 \cdot 35) \\
+            &= 35 - 4 \cdot 78 + 8 \cdot 35 - (9 \cdot 78 - 18 \cdot 35 - 2 \cdot 35)\\
+            &= \underbrace{35 + 8 \cdot 35 + 20 \cdot 35}_{29 \cdot 35} - \underbrace{9 \cdot 78 - 4 \cdot 78}_{13 \cdot 78} \\
+            &= 29 \cdot 35 - 13 \cdot 78.
+            % &= 35 - 4 \cdot (78 - 2 \cdot 35) - ((78 - 2 \cdot 35) - 2 \cdot 35 + (78 - 2 \cdot 35) \cdot (78 - 2 \cdot 35))\\
+            % &= 35 - 4 \cdot 78 + 8 \cdot 35 - (78 - 2 \cdot 35 - 2 \cdot 35 + 78 \cdot 78 - 140 \cdot 78 + 140 \cdot 35)\\
+            % &= 59 \cdot 78 - 127 \cdot 35
+            % &= 3 - 1 \cdot (8 - 2 \cdot 3)\\
+            % &= (35 - 4 \cdot 8) - 1 \cdot (8 - 2 \cdot (35 - 4 \cdot 8))\\
+            % &= (35 - 4 \cdot (78 - 2 \cdot 35)) - 1 \cdot ((78 - 2 \cdot 35) - 2 \cdot (35 - 4 \cdot (78 - 2 \cdot 35)))\\
+            % &= (35 - 4 \cdot 78 + 8 \cdot 35) - (78 - 2 \cdot 35 - 2 \cdot 35 + 8 \cdot 78 + 16 \cdot 35)\\
+            % &= (9 \cdot 35 - 4 \cdot 78) - (9 \cdot 78)
+            \end{align*}
+        \end{itemize}
+\end{enumerate}
+\end{document}
