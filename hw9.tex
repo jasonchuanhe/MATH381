@@ -1,0 +1,136 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\lhead{MATH381.004 --- Homework 9}
+\rhead{\textbf{Jason He}}
+
+% 9.5:   4,  9,  15, 26 a)c)e),  35, 36, 37,  41, 44,  47b)c)d),  48c)
+
+% 9.3:   1 a) b) c),  4 b) c),  26, 27, 28, 32
+
+\begin{document}
+\begin{enumerate}
+    \item[{[\S 9.5]} 4.]
+        \begin{itemize}
+            \item[(1)] Suppose two students are equivalent if they have the same graduation year. Then an equivalence class consists of the set of students graduating in any single year, assuming at least one student will graduate that year.
+            \item[(2)] Suppose two students are equivalent if they have the same academic advisor. Suppose advisors are Profs.~A, B, and C; equivalence classes are the set of students assigend to Prof.~A, the set of students assigned to Prof.~B, and the set of students assigned to Prof.~C, assuming each professor advises at least one student.
+            \item[(3)] Partition the set of students into two classes: those who will go into academia and those who will go into industry. Assume neither class is empty. Then every student going into academia is equivalent to every such student; every student going into industry is equivalent to every such student. In both classes ``every such student'' includes oneself (reflexivity).
+        \end{itemize}
+    \item[9.]
+        \begin{itemize}
+            \item[(a)] $R$ is
+                \begin{itemize}
+                    \item[$\checkmark$] reflexive: $f(x) = f(x)$
+                    \item[$\checkmark$] symmetric: $f(x) = f(y) \Leftrightarrow f(y) = f(x)$
+                    \item[$\checkmark$] transitive: $[f(x)=f(y)] \land [f(y)=f(z)] \Rightarrow f(x)=f(z)$
+                \end{itemize}
+            \item[(b)] Equivalence classes are the sets $f^{-1}(b)$ for each $b$ in the range of $f$
+        \end{itemize}
+    \item[15.] $R$ is
+        \begin{itemize}
+            \item[$\checkmark$] reflexive: $a+b = b+a \Rightarrow ((a,b), (a,b)) \in R$
+            \item[$\checkmark$] symmetric: $[a+d = b+c] \Leftrightarrow [c+b = d+a]$, thus
+            \[
+            ((a,b), (c,d)) \in R \Leftrightarrow ((c,d),(a,b)) \in R
+            \]
+            \item[$\checkmark$] transitive: $[a+d = b+c] \land [c+e = d+f] \Rightarrow [a+e = b+f]$, thus
+            \[
+            [((a,b),(c,d)) \in R] \land [((c,d),(e,f)) \in R] \Rightarrow ((a,b),(e,f)) \in R
+            \]
+        \end{itemize}
+    \item[26.]
+        \begin{itemize}
+            \item[(a)] $[0] = \{ 0 \}, [1] = \{ 1 \}, [2] = \{ 2 \}, [3] = \{ 3 \}$
+            \item[(c)] $[0] = \{ 0 \}, [1] = \{ 1, 2 \}, [2] = \{ 1, 2 \}, [3] = \{ 3 \}$
+            \item[(e)] (not an equivalence relation)
+        \end{itemize}
+    \item[35.]
+        \begin{itemize}
+            \item[(a)] $[2]_{5} = \{ i \mid i \equiv 2 \pmod 5 \} = \{ \ldots, -8, -3, 2, 7, 12, \ldots \}$
+            \item[(b)] $[3]_{5} = \{ i \mid i \equiv 3 \pmod 5 \} = \{ \ldots, -7, -2, 3, 8, 13, \ldots \}$
+            \item[(c)] $[6]_{5} = \{ i \mid i \equiv 6 \pmod 5 \} = \{ \ldots, -9, -4, 1, 6, 11, \ldots \}$
+            \item[(d)] $[-3]_{5} = \{ i \mid i \equiv -3 \pmod 5 \} = \{ \ldots, -8, -3, 2, 7, 12, \ldots \}$
+        \end{itemize}
+    \item[36.]
+        \begin{itemize}
+            \item[(a)] $[4]_{2} = \{ i \mid i \equiv 4 \pmod 2 \} = \{ \ldots, -4, -2, 0, 2, 4, \ldots \}$
+            \item[(b)] $[4]_{3} = \{ i \mid i \equiv 4 \pmod 3 \} = \{ \ldots, -5, -2, 1, 4, 7, \ldots \}$
+            \item[(c)] $[4]_{6} = \{ i \mid i \equiv 4 \pmod 6 \} = \{ \ldots, -8, -2, 4, 10, 16, \ldots \}$
+            \item[(d)] $[4]_{8} = \{ i \mid i \equiv 4 \pmod 8 \} = \{ \ldots, -12, -4, 4, 12, 20, \ldots \}$
+        \end{itemize}
+    \item[37.] For each $k = 0, 1, \ldots, 5$: $[k]_{6} = \{ i \mid i \equiv k \pmod 6 \}$
+    \item[41.]
+        \begin{itemize}
+            \item[(a)] No --- not disjoint
+            \item[(b)] Yes
+            \item[(c)] Yes
+            \item[(d)] No --- missing the element $3$
+        \end{itemize}
+    \item[44.]
+        \begin{itemize}
+            \item[(a)] Yes
+            \item[(b)] No --- missing the element $0$
+            \item[(c)] Yes
+            \item[(d)] Yes
+            \item[(e)] No --- not disjoint
+        \end{itemize}
+    \item[47.]
+        \begin{itemize}
+            \item[(b)] $\{ (0,0), (0,1), (1,0), (1,1), (2,2), (2,3), (3,2), (3,3), (4,4), (4,5), (5,4), (5,5) \}$
+            \item[(c)] $\{ (0,0), (0,1), (0,2), (1,0), (1,1), (1,2), (2,0), (2,1), (2,2), (3,3), (3,4), (3,5), (4,3), (4,4), \\ (4,5), (5,3), (5,4), (5,5) \}$
+            \item[(d)] $\{ (0,0), (1,1), (2,2), (3,3), (4,4), (5,5) \}$
+        \end{itemize}
+    \item[48c.] $\{ (a,a), (a,b), (a,c), (a,d), (b,a), (b,b), (b,c), (b,d), (c,a), (c,b), (c,c), (c,d), (d,a), (d,b), (d,c), \\ (d,d), (e,e), (e,f), (e,g), (f,e), (f,f), (f,g), (g,e), (g,f), (g,g) \}$
+    \item[{[\S 9.3]} 1.]
+        \begin{itemize}
+            \item[(a)] \hfill
+
+            \vspace{-0.1in}
+                $\begin{bmatrix}
+                1 & 1 & 1 \\
+                0 & 0 & 0 \\
+                0 & 0 & 0
+                \end{bmatrix}$
+            \item[(b)] \hfill
+
+            \vspace{-0.1in}
+                $\begin{bmatrix}
+                0 & 1 & 0 \\
+                1 & 1 & 0 \\
+                0 & 0 & 1
+                \end{bmatrix}$
+            \item[(c)] \hfill
+
+            \vspace{-0.1in}
+                $\begin{bmatrix}
+                1 & 1 & 1 \\
+                0 & 1 & 1 \\
+                0 & 0 & 1
+                \end{bmatrix}$
+        \end{itemize}
+    \item[4.]
+        \begin{itemize}
+            \item[(b)] $\{ (1,1), (1,2), (1,3), (2,2), (3,3), (3,4), (4,1), (4,4) \}$
+            \item[(c)] $\{ (1,2), (1,4), (2,1), (2,3), (3,2), (3,4), (4,1), (4,3) \}$
+        \end{itemize}
+    \item[26.] $\{ (a,a), (a,b), (b,a), (b,b), (c,a), (c,c), (c,d), (d,d) \}$
+    \item[27.] $\{ (a,a), (a,b), (a,c), (b,a), (b,b), (b,c), (c,a), (c,b), (d,d) \}$
+    \item[28.] [I will assume the unlabeled vertex is $a$.]
+
+    $\{ (a,a), (a,b), (b,a), (b,b), (c,c), (c,d), (d,c), (d,d) \}$
+    \item[32.]\hfill
+
+    \vspace{-0.1in}
+    \begin{tabular}{rcccccc}\hline
+    & \emph{reflexive} & \emph{irreflexive} & \emph{symmetric} & \emph{antisymmetric} & \emph{asymmetric} & \emph{transitive}\\\hline
+    (26) & $\checkmark$ & -- & -- & -- & -- & -- \\
+    (27) & -- & -- & $\checkmark$ & -- & -- & -- \\
+    (28) & $\checkmark$ & -- & $\checkmark$ & -- & -- & $\checkmark$ \\\hline
+    \end{tabular}
+\end{enumerate}
+\end{document}
