@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\lhead{MATH381.004 --- Homework 11}
+\rhead{\textbf{Jason He}}
+
+% 6.3:  28, 33,  37
+
+% 6.4:   2,4, 7, 12, 15, 19
+
+% 6.5:   1, 3, 6, 8, 11, 17 
+
+\begin{document}
+
+%\textsc{Notation.} $\displaystyle\binom{n}{m}$ is the binomial coefficient.
+
+\begin{enumerate}
+    \item[{[\S 6.3]} 28.] $\displaystyle\binom{40}{17} = 88{,}732{,}378{,}800$ keys
+    \item[33.] $\displaystyle\binom{10}{3}\binom{15}{3} = 54{,}600$ committees
+    \item[37.] Length-10 bit strings of at least three of both \textcircled{\texttt{1}} and \textcircled{\texttt{0}} must be comprised of either
+        \begin{itemize}
+            \item $3\times\textcircled{\texttt{1}}$ and $7\times\textcircled{\texttt{0}}$,
+            \item $4\times\textcircled{\texttt{1}}$ and $6\times\textcircled{\texttt{0}}$,
+            \item $5\times\textcircled{\texttt{1}}$ and $5\times\textcircled{\texttt{0}}$,
+            \item $6\times\textcircled{\texttt{1}}$ and $4\times\textcircled{\texttt{0}}$, or
+            \item $7\times\textcircled{\texttt{1}}$ and $3\times\textcircled{\texttt{0}}$;
+        \end{itemize}
+    thus there are $\displaystyle\sum_{3 \le k \le 7} \binom{10}{k} = \fbox{912 strings}$.
+    \item[{[\S 6.4]} 2.]
+        \begin{itemize}
+            \item[(a)] $(x+y)^5 = (x+y)(x+y)(x+y)(x+y)(x+y)$ gives rise to six terms:
+                \begin{itemize}
+                    \item[i.] $x^5$, obtainable $\binom{5}{5} = 1$ way (viz.~$xxxxx$)
+                    \item[ii.] $x^4 y$, obtainable $\binom{5}{4} = 5$ ways ($xxxxy, xxxyx, \ldots$)
+                    \item[iii.] $x^3 y^2$, obtainable $\binom{5}{3} = 10$ ways
+                    \item[iv.] $x^2 y^3$, obtainable $\binom{5}{2} = 10$ ways
+                    \item[v.] $x y^4$, obtainable $\binom{5}{1} = 5$ ways
+                    \item[vi.] $y^5$, obtainable $\binom{5}{0} = 1$ way
+                \end{itemize}
+            Therefore, $(x+y)^5 = x^5 + 5 x^4 y + 10 x^3 y^2 + 10 x^2 y^3 + 5 x y^4 + y^5$.
+            
+            \item[(b)] Using the binomial theorem,
+            \begin{align*}
+            (x+y)^5 &= \sum_{0 \le j \le 5} \binom{5}{j} x^{5-j}y^j \\
+            &= \binom{5}{0} x^5 + \binom{5}{1} x^4 y + \binom{5}{2} x^3 y^2 + \binom{5}{3} x^2 y^3 + \binom{5}{4} x y^4 + \binom{5}{5} y^5 \\
+            &= x^5 + 5 x^4 y + 10 x^3 y^2 + 10 x^2 y^3 + 5 x y^4 + y^5.
+            \end{align*}
+        \end{itemize}
+    \item[4.] The coefficient of $x^5 y^8$ is $\displaystyle\binom{13}{8} = \fbox{1287}$.
+    \item[7.] The coefficient of $x^9$ is $\displaystyle (-1) \binom{19}{9} 2^{(19-9)} = \fbox{$-94{,}595{,}072$}$.
+    \item[12.] Row 11 is \fbox{$1 \quad 11 \quad 55 \quad 165 \quad 330 \quad 462 \quad 462 \quad 330 \quad 165 \quad 55 \quad 11 \quad 1$}.
+    \item[15.] Using the binomial theorem with $x = y = 1$, $2^n$ can be expressed as
+    \[
+    (1+1)^n = \sum_{0 \le k \le n} \binom{n}{k} 1^k 1^{n-k} = \sum_{0 \le k \le n} \binom{n}{k},
+    \]
+    and since $\left(\sum \binom{n}{k}\right) \ge \binom{n}{k}$, it follows that $\binom{n}{k} \le 2^n$. $\square$
+    \item[19.] Pascal's Identity is
+        \begin{align*}
+        \binom{n}{r-1} + \binom{n}{r} &= \frac{n!}{(r-1)!(n-(r-1))!} + \frac{n!}{r!(n-r)!} \\
+        &= \frac{n!(r+(n-r+1))}{r!(n-r+1)!} \\
+        &= \frac{(n+1)!}{r!(n+1-r)!} \\
+        &= \binom{n+1}{r}. \tag*{$\square$}
+        \end{align*}
+    \item[{[\S 6.5]} 1.] $3^5 = 243$
+    \item[3.] $26^6 = 308,915,776$
+    \item[6.] $\displaystyle\binom{3+5-1}{5} = 21$
+    \item[8.] $\displaystyle\binom{21+12-1}{12} = 225,792,840$
+    \item[11.] The number of pennies and nickels is irrelevant as long as there are at least eight of each. There are $\displaystyle\binom{2+8-1}{8} = \fbox{9 ways to choose eight coins}$.
+    \item[17.] $\dfrac{10!}{2!3!5!} = 2{,}520$ strings
+\end{enumerate}
+\end{document}
