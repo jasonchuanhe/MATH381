@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\lhead{MATH381.004 --- Homework 12}
+\rhead{\textbf{Jason He}}
+
+% 6.5:  14, 29,  35, 36
+
+% 7.1:  3, 7, 12, 21, 23, 31, 33, 36
+
+\begin{document}
+
+%\textsc{Notation.} $\displaystyle\binom{n}{m}$ is the binomial coefficient.
+
+\begin{enumerate}
+    \item[{[\S 6.5]} 14.] $\dbinom{4+17-1}{17} = 1140$ solutions
+    \item[29.] All such strings begin with $\texttt{1-0-0}$, then contain 3 units of $\texttt{1-0-0}$ and 4 units of $\texttt{0}$. Thus there are $\dbinom{3+4}{3} = \fbox{35 different bit strings}$.
+    \item[35.] %TKTK
+    \item[36.] $\dbinom{14}{6} = 3003$ solutions
+    \item[{[\S 7.1]} 3.] $p = \dfrac{1}{2} = 0.5$
+    \item[7.] $p = \left( \dfrac{1}{2} \right)^6 \approx 0.016$
+    \item[12.] $p = \dfrac{\binom{4}{1} \binom{52-4}{4}}{\binom{52}{5}} \approx 0.299$
+    \item[21.] $p = \left( \dfrac{3}{6} \right)^6 \approx 0.016$
+    \item[23.] There are $\left\lfloor\dfrac{100}{5}\right\rfloor + \left\lfloor\dfrac{100}{7}\right\rfloor - \left\lfloor\dfrac{100}{5\cdot 7}\right\rfloor = 32$ such integers. Thus \fbox{$p = \dfrac{32}{100} = 0.32$}.
+    \item[31.] $p = \dfrac{3}{100} = 0.03$
+    \item[33.]
+        \begin{itemize}
+            \item[(a)] $p = \dfrac{1}{200 \cdot 199 \cdot 198} \approx 1.27 \times 10^{-7}$
+            \item[(b)] $p = \dfrac{1}{200^3} = 1.25 \times 10^{-7}$
+        \end{itemize}
+    \item[36.] Probability of rolling a total of 8 with
+        \begin{itemize}
+            \item \textit{two dice:} $\dfrac{ 2 \cdot \mathbf{card}(\{ (2,6), (3,5), (4,4) \}) - 1}{6^2} = \dfrac{5}{36} = \dfrac{30}{216}$
+            \item \textit{three dice:} $\dfrac{6 \cdot \mathbf{card}( \{ (1,2,5), (1,3,4) \} ) + 3 \cdot \mathbf{card}( \{ (1,1,6), (2,2,4), (3,3,2) \} )}{6^3} = \dfrac{21}{216}$
+            \begin{flushright}
+            \small{$\mathbf{card}()$ is set cardinality}
+            \end{flushright}
+        \end{itemize}
+
+    Therefore, \fbox{rolling a total of 8 with two dice is more likely}.
+\end{enumerate}
+\end{document}
