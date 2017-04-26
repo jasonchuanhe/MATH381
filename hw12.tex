@@ -20,7 +20,28 @@
 \begin{enumerate}
     \item[{[\S 6.5]} 14.] $\dbinom{4+17-1}{17} = 1140$ solutions
     \item[29.] All such strings begin with $\texttt{1-0-0}$, then contain 3 units of $\texttt{1-0-0}$ and 4 units of $\texttt{0}$. Thus there are $\dbinom{3+4}{3} = \fbox{35 different bit strings}$.
-    \item[35.] %TKTK
+    \item[35.] EVERGREEN has 4 E, 2 R, 1 V, 1 G, 1 N. There are three cases to consider; the number of
+        \begin{itemize}
+            \item \textit{7-character strings} leaving out two letters is:
+                \begin{itemize}
+                    \item (E,E): $\dfrac{7!}{2!2!}$
+                    \item (E,R): $\dfrac{7!}{3!}$
+                    \item (E,V), (E,G), (E,N): $\dfrac{3 \cdot 7!}{3!2!}$
+                    \item (R,R), (R,V), (R,G), (R,N): $\dfrac{4 \cdot 7!}{4!}$
+                    \item (V,G), (V,N), or (G,N): $\dfrac{3 \cdot 7!}{4!2!}$
+                \end{itemize}
+            \item \textit{8-character strings} leaving out one letter is:
+                \begin{itemize}
+                    \item E: $\dfrac{8!}{3!2!}$
+                    \item R: $\dfrac{8!}{4!}$
+                    \item V, G, N: $\dfrac{8!}{4!2!}$
+                \end{itemize}
+            \item \textit{9-character strings} is:
+                \begin{itemize}
+                    \item $\dfrac{9!}{4!2!}$
+                \end{itemize}
+        \end{itemize}
+    Summing over all cases gives \fbox{19,635 strings}.
     \item[36.] $\dbinom{14}{6} = 3003$ solutions
     \item[{[\S 7.1]} 3.] $p = \dfrac{1}{2} = 0.5$
     \item[7.] $p = \left( \dfrac{1}{2} \right)^6 \approx 0.016$
